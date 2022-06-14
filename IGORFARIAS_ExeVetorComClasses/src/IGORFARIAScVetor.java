@@ -45,13 +45,17 @@ public class IGORFARIAScVetor {
 	
 
 	public void insertValue(int pos, int value) {
+		pos--;
 		if(pos <  this.vetorInterno.length && pos >= 0 ) {
-			this.vetorInterno[pos-1] = value;
+			this.vetorInterno[pos] = value;
 		} else {
-			System.out.println("posi��o informado fora do range do vetor");
+			System.out.println("posição informado fora do range do vetor");
 		}
 	}
-
+	
+/* insertValue -> fazer exibição da mensagem de erro para posição fora do tamanho do vetor. */	
+	
+	
 	public void eraseInPositon(int pos) {
 		this.vetorInterno[pos] = 0;
 		System.out.printf("posi��o "+ (pos-1) + " foi apagada!\n");

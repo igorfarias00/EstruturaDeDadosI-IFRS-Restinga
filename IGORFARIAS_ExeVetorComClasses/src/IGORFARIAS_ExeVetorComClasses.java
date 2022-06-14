@@ -1,8 +1,7 @@
 import java.util.Scanner;
 import javax.swing.*;
 
-
-public class  IGORFARIAS_ExeVetorComClasses {
+public class IGORFARIAS_ExeVetorComClasses {
 
 	public static String printMenu() {
 		String menu;
@@ -40,44 +39,35 @@ public class  IGORFARIAS_ExeVetorComClasses {
 				"-- 0) sair do programa \n");
 		return menu;
 	}
-	
 
-
-	
-	
 	public static void main(String[] args) {
 		Scanner tcl = new Scanner(System.in);
 		int vetSize, opcMenu, pos, value;
-		JFrame janela = new JFrame("Vetor como Objeto");
-	//	JButton randomVector = new JButton("Criar Vetor randomico");
-	//	JButton randomOrdenatedVector = new JButton ("Criar Vetor randomico ordenado");
-	//	JButton insertValue = new JButton ("Inserir valor em certa posição do vetor");
-		
-		Button meuPainel = new Button();
-		
-	//	janela.add(randomVector);
-	//	janela.add(randomOrdenatedVector);
-	//	janela.add(insertValue);
-		
-		
-		
-	//	janela.getContentPane().add(meuPainel);
-		janela.setSize(500, 500);
-		janela.pack();
-		janela.setVisible(true);
-		janela.add(meuPainel);
-		
+
 		vetSize = Integer.parseInt(JOptionPane.showInputDialog("Digite o tamanho do vetor que você quer criar: "));
 		
-		do {
-			if(vetSize <= 0) {
-				JOptionPane.showInputDialog("O valor que você informou é invalido, tente novamente digitando um valor maior que zero");
-			}
+		while(vetSize <= 0){
+			JOptionPane.showInputDialog("O valor que você informou é invalido, tente novamente digitando um valor maior que zero");
 			vetSize = Integer.parseInt(JOptionPane.showInputDialog("Digite o tamanho do vetor que voc� quer criar: "));
-		} while (vetSize < 0);
+		}
+	
 		
-		IGORFARIAScVetor vet = new IGORFARIAScVetor(vetSize);
+		Button meuPainel = new Button(vetSize);
 		
+		meuPainel.setSize(500, 400);
+		meuPainel.setVisible(true);
+		
+				
+		while(vetSize <= 0){
+			JOptionPane.showInputDialog("O valor que você informou é invalido, tente novamente digitando um valor maior que zero");
+			vetSize = Integer.parseInt(JOptionPane.showInputDialog("Digite o tamanho do vetor que voc� quer criar: "));
+		}
+	
+		
+		
+
+		
+/*		
 
 		do {
 			
@@ -171,6 +161,6 @@ public class  IGORFARIAS_ExeVetorComClasses {
 		
 		
 		
-		
+*/		
 	}
 }
