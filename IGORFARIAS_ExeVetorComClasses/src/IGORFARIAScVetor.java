@@ -38,12 +38,28 @@ public class IGORFARIAScVetor {
 	
 	public void randomVector() {
 		Random generator = new Random();
-		for(int i = 0; i < this.vetorInterno.length; i++) {
-			this.vetorInterno[i] = generator.nextInt(100);
+		boolean foundEqual= false;
+		int value = generator.nextInt(this.vetorInterno.length * 2 + 1), i = 0;
+		
+		do {
+		for(i = 0; i < this.vetorInterno.length; i++) {
+			for(int j = 0; j < this.vetorInterno.length; j++) {
+				if(value == this.vetorInterno[j]) {
+					value = generator.nextInt(this.vetorInterno.length * 2 + 1);
+					foundEqual = true;
+				}
+			}
+			if (foundEqual == false) {
+				this.vetorInterno[i] = value;
+				value = generator.nextInt(this.vetorInterno.length * 2 + 1);
+			} else {
+				generator.nextInt(this.vetorInterno.length * 2 + 1);
+				foundEqual = false;
+			}
 		}
+		} while (foundEqual == false && i < this.vetorInterno.length);
 	}
 	
-
 	public void insertValue(int pos, int value) {
 		pos--;
 		if(pos <  this.vetorInterno.length && pos >= 0 ) {
@@ -224,6 +240,13 @@ public class IGORFARIAScVetor {
 	public int vectorLength() {
 		return this.vetorInterno.length;		//retorna o tamanho do vetor
 	}
+	
+	public void eraseVector() {
+		for(int i = 0; i < this.vetorInterno.length; i++) {
+			this.vetorInterno[i] = 0;
+		}
+	}
+	
 
 	public void printVector() {
 		String message = "";

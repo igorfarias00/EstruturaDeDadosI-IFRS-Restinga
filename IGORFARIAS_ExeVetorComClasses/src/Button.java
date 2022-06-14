@@ -17,6 +17,7 @@ public class Button extends JFrame{
 	private JButton howManyOccupied = new JButton("Verificar quantos elementos existem no vetor");
 	private JButton biggestElement = new JButton("Verificar o maior elemento do vetor");
 	private JButton smallerElement = new JButton("Verificar o menor elemento do vetor");
+	private JButton eraseVector = new JButton("Apagar vetor");
 	private JButton printVector = new JButton("Mostrar o vetor");
 	private JButton exit = new JButton("Sair do programa");
 	
@@ -30,7 +31,7 @@ public class Button extends JFrame{
 		
 		setLayout(new FlowLayout());
 		menu = new ButtonHandler(vetSize, randomVector, randomOrdenatedVector, insertValue, bubbleShort, selectionShort, insertShort, 
-				eraseInPosition, find, findByBinary, findByBinaryRecursive, howManyEmpty, howManyOccupied, biggestElement, smallerElement, printVector, exit);
+				eraseInPosition, find, findByBinary, findByBinaryRecursive, howManyEmpty, howManyOccupied, biggestElement, smallerElement, eraseVector, printVector, exit);
 		
 		
 		randomVector.addActionListener(menu);
@@ -61,6 +62,8 @@ public class Button extends JFrame{
 		add(biggestElement);
 		smallerElement.addActionListener(menu);
 		add(smallerElement);
+		eraseVector.addActionListener(menu);
+		add(eraseVector);
 		printVector.addActionListener(menu);
 		add(printVector);
 		

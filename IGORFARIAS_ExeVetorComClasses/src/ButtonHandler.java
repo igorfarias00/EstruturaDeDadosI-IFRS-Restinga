@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 public class ButtonHandler implements ActionListener{
 	private JButton randomVector, randomOrdenatedVector, insertValue, bubbleShort, selectionShort, insertShort, printVector;
 	private JButton eraseInPosition, find, findByBinary, findByBinaryRecursive, howManyEmpty, howManyOccupied, biggestElement;
-	private JButton smallerElement, exit;
+	private JButton smallerElement, eraseVector, exit;
 	public IGORFARIAScVetor vetor;
 	
 	/*
@@ -32,7 +32,7 @@ public class ButtonHandler implements ActionListener{
 	
 	public ButtonHandler(IGORFARIAScVetor vet, JButton randomVector, JButton randomOrdenatedVector, JButton insertValue,JButton bubbleShort, JButton selectionShort, JButton insertShort,
 	JButton eraseInPosition, JButton find, JButton findByBinary, JButton findByBinaryRecursive, JButton howManyEmpty, JButton howManyOccupied, 
-	JButton biggestElement, JButton smallerElement, JButton printVector, JButton exit) {
+	JButton biggestElement, JButton smallerElement, JButton eraseVector, JButton printVector, JButton exit) {
 		this.randomVector = randomVector;
 		this.randomOrdenatedVector = randomOrdenatedVector;
 		this.insertValue = insertValue;
@@ -47,6 +47,7 @@ public class ButtonHandler implements ActionListener{
 		this.howManyOccupied = howManyOccupied;
 		this.biggestElement = biggestElement;
 		this.smallerElement = smallerElement;
+		this.eraseVector = eraseVector;
 		this.printVector = printVector;
 		this.exit = exit;
 		
@@ -127,6 +128,11 @@ public class ButtonHandler implements ActionListener{
 		  } else if(evento.getSource() == smallerElement) {
 			  int smaller = vetor.smallerElement();
 			  JOptionPane.showMessageDialog(null, "O menor elemento no vetor é " + smaller );
+			  
+			  
+		  }  else if(evento.getSource() == eraseVector) {
+			  vetor.eraseVector();
+			  JOptionPane.showMessageDialog(null, "O vetor foi apagado!!!");
 			  
 			  
 		  } else if(evento.getSource() == printVector) {

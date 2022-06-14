@@ -55,7 +55,7 @@ public class IGORFARIAS_ExeVetorComClasses {
 		
 		Button meuPainel = new Button(vector);
 		
-		meuPainel.setSize(500, 400);
+		meuPainel.setSize(350, 600);
 		meuPainel.setVisible(true);
 		
 				
