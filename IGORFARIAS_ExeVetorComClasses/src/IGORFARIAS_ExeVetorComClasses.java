@@ -51,8 +51,9 @@ public class IGORFARIAS_ExeVetorComClasses {
 			vetSize = Integer.parseInt(JOptionPane.showInputDialog("Digite o tamanho do vetor que voc� quer criar: "));
 		}
 	
+		IGORFARIAScVetor vector = new IGORFARIAScVetor(vetSize);
 		
-		Button meuPainel = new Button(vetSize);
+		Button meuPainel = new Button(vector);
 		
 		meuPainel.setSize(500, 400);
 		meuPainel.setVisible(true);
@@ -67,7 +68,7 @@ public class IGORFARIAS_ExeVetorComClasses {
 		
 
 		
-/*		
+/*		menu criado com janelas pop-up. alterado para um menu com botões
 
 		do {
 			

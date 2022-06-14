@@ -50,21 +50,21 @@ public class IGORFARIAScVetor {
 			this.vetorInterno[pos] = value;
 		} else {
 			System.out.println("posição informado fora do range do vetor");
+			JOptionPane.showMessageDialog(null, "posição informado fora do range do vetor");
 		}
 	}
 	
-/* insertValue -> fazer exibição da mensagem de erro para posição fora do tamanho do vetor. */	
 	
 	
-	public void eraseInPositon(int pos) {
+	public void eraseInPosition(int pos) {
 		this.vetorInterno[pos] = 0;
-		System.out.printf("posi��o "+ (pos-1) + " foi apagada!\n");
+		System.out.printf("posição "+ (pos-1) + " foi apagada!\n");
 	}
 
 	
 
 	public void find(int value) {
-		String message = "O valor informado es� na posi��o ";
+		String message = "O valor informado está na posição ";
 		boolean found = false;
 		int i = 0;
 		for(i=0; i < this.vetorInterno.length; i++) { // alterar o final do la�o, encontrar uma fun��o para passar o tamanho maximo do vetor neste la�o
@@ -79,7 +79,7 @@ public class IGORFARIAScVetor {
 				
 	}
 
-	public int findByBinaryInteractive(int value) {
+	public int findByBinary(int value) {
 		int start = 0, end = this.vetorInterno.length - 1 , middle = 0;
 		
 		while(start <= end) {
@@ -93,7 +93,7 @@ public class IGORFARIAScVetor {
 			}
 		}
 		
-		return -1;
+		return -1;   // caso o valor não seja encontrado retorna -1
 	}
 	
 	public int findByBinaryRecursive(int value) {
@@ -105,7 +105,7 @@ public class IGORFARIAScVetor {
 		int middle = (start + end) / 2;
 		
 		if(start > end) {
-			return -1;
+			return -1;				// caso não ache o valor, retorna -1
 		}
 		
 		if(this.vetorInterno[middle] == value) {
@@ -129,6 +129,17 @@ public class IGORFARIAScVetor {
 		}
 		return cont;
 	}
+	
+	public int howManyOccupied() {
+		int cont = 0;
+		for(int i = 0; i < this.vetorInterno.length; i++) {		// retorna a quantidade de valores zero no vetor
+			if(this.vetorInterno[i] > 0) {
+				cont += 1;
+			}
+		}
+		return cont;
+	}
+	
 	
 	public int howManyWithValue() {				// retorna a quantidade de valores diferentes de zero no vetor
 		int cont = 0;
